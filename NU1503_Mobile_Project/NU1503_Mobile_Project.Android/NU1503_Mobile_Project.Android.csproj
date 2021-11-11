@@ -96,7 +96,7 @@
 		<Message Text="Override _JavaSdkDirectory" Importance="high" />
 		<Message Text="JAVA_HOME IS: $(JAVA_HOME)" />
 		<Message Text="_JavaSdkDirectory WAS: $(_JavaSdkDirectory)" />
-		<Exec Command="'$(_JavaSdkDirectory)'='$(JAVA_HOME)" />
+		<Exec Condition="'$(_JavaSdkDirectory)'='$(JAVA_HOME)" />
 		<!--<Exec ContinueOnError="true" Command="pwsh -NoLogo -NoProfile -NonInteractive -Command . {$(_JavaSdkDirectory) = $env:JAVA_HOME}" />-->
 		<Message Text="_JavaSdkDirectory IS NOW; $(_JavaSdkDirectory)" />		
 	</Target>
