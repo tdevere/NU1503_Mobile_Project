@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NU1503_Mobile_Project.Andro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NU1503_Mobile_Project.iOS", "NU1503_Mobile_Project\NU1503_Mobile_Project.iOS\NU1503_Mobile_Project.iOS.csproj", "{7766078A-AC0D-40F8-BF56-1A8C8197ED34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NU1503_Mobile_Project", "NU1503_Mobile_Project\NU1503_Mobile_Project\NU1503_Mobile_Project.csproj", "{2CC022A0-B38B-4F31-9AB7-86F61DAC7086}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NU1503_Mobile_Project", "NU1503_Mobile_Project\NU1503_Mobile_Project\NU1503_Mobile_Project.csproj", "{2CC022A0-B38B-4F31-9AB7-86F61DAC7086}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{22C1EF3A-9115-468E-8178-4FA7FAE51B24}"
+	ProjectSection(SolutionItems) = preProject
+		appcenter-post-clone.ps1 = appcenter-post-clone.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
