@@ -97,7 +97,11 @@
 		<Message Text="JAVA_HOME IS: $(JAVA_HOME)" />
 		<Message Text="_JavaSdkDirectory WAS: $(_JavaSdkDirectory)" />
 		<PropertyGroup>
-			<_JavaSdkDirectory>$(JAVA_HOME)</_JavaSdkDirectory>
+			<OverrideMe>
+				<![CDATA[
+				set _JavaSdkDirectory='$(JAVA_HOME)'
+				]]>
+			</OverrideMe>
 		</PropertyGroup>
 		<!--<Exec Condition="'$(_JavaSdkDirectory)'='$(JAVA_HOME)" />-->
 		<!--<Exec ContinueOnError="true" Command="pwsh -NoLogo -NoProfile -NonInteractive -Command . {$(_JavaSdkDirectory) = $env:JAVA_HOME}" />-->
