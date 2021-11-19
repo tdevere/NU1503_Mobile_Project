@@ -94,14 +94,13 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 	<Target Name="SetAndroidVariable" BeforeTargets="_ResolveAndroidTooling">
 		<Message Text="Override _JavaSdkDirectory" Importance="high" />
-		<Message Text="JAVA_HOME IS: $(JAVA_HOME)" />
 		<Message Text="_JavaSdkDirectory WAS: $(_JavaSdkDirectory)" />
 		<PropertyGroup>
 			<OverrideMe>
 				<![CDATA[
 				set _JavaSdkDirectory='$(JAVA_HOME)'
 				]]>
-			</OverrideMe>
+			</OverrideMe>			
 		</PropertyGroup>
 		<!--<Exec Condition="'$(_JavaSdkDirectory)'='$(JAVA_HOME)" />-->
 		<!--<Exec ContinueOnError="true" Command="pwsh -NoLogo -NoProfile -NonInteractive -Command . {$(_JavaSdkDirectory) = $env:JAVA_HOME}" />-->
