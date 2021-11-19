@@ -6,7 +6,7 @@
 
 echo "The Post Clone Script"
 
-SLN_PATH=$(find . -iname '*.sln' -type f -print0)
+SLN_PATH=$(find $APPCENTER_SOURCE_DIRECTORY -iname '*.sln' -type f -print0)
 echo "SLN_PATH = $SLN_PATH"
 
 if [ -z "$RemoveUWPProjects" ]
@@ -16,7 +16,7 @@ then
 fi
 
 
-UWP_PATHS=$(find . -iname '*UWP*.csproj' -type f -print0 )
+UWP_PATHS=$(find $APPCENTER_SOURCE_DIRECTORY -iname '*UWP*.csproj' -type f -print0 )
 echo " UWP_PATHS = $UWP_PATHS"
 
 for p in "$UWP_PATHS"; do
@@ -31,7 +31,7 @@ then
     exit
 fi
 
-ANDROID_PATHS=$(find . -iname '*Android*.csproj' -type f -print0 )
+ANDROID_PATHS=$(find $APPCENTER_SOURCE_DIRECTORY -iname '*Android*.csproj' -type f -print0 )
 echo "ANDROID_PATHS = $ANDROID_PATHS"
 
 for p in "$ANDROID_PATHS"; do
@@ -46,7 +46,7 @@ then
 fi
 
 
-IOS_PATHS=$(find . -name '*IOS*.csproj' -type f -print0 )
+IOS_PATHS=$(find $APPCENTER_SOURCE_DIRECTORY -name '*IOS*.csproj' -type f -print0 )
 echo "IOS_PATHS = $IOS_PATHS"
 
 for p in "$IOS_PATHS"; do
