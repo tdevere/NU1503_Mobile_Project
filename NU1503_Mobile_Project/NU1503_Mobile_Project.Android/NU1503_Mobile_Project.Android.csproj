@@ -16,7 +16,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
@@ -92,18 +92,16 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-	<Target Name="SetAndroidVariable" BeforeTargets="_ResolveAndroidTooling">
-		<Message Text="Override _JavaSdkDirectory" Importance="high" />
-		<Message Text="_JavaSdkDirectory WAS: $(_JavaSdkDirectory)" />
-		<PropertyGroup>
-			<OverrideMe>
-				<![CDATA[
+  <Target Name="SetAndroidVariable" BeforeTargets="_ResolveAndroidTooling">
+    <Message Text="Override _JavaSdkDirectory" Importance="high" />
+    <Message Text="_JavaSdkDirectory WAS: $(_JavaSdkDirectory)" />
+    <PropertyGroup>
+      <OverrideMe><![CDATA[
 				set _JavaSdkDirectory='$(JAVA_HOME)'
-				]]>
-			</OverrideMe>			
-		</PropertyGroup>
-		<!--<Exec Condition="'$(_JavaSdkDirectory)'='$(JAVA_HOME)" />-->
-		<!--<Exec ContinueOnError="true" Command="pwsh -NoLogo -NoProfile -NonInteractive -Command . {$(_JavaSdkDirectory) = $env:JAVA_HOME}" />-->
-		<Message Text="_JavaSdkDirectory IS NOW; $(_JavaSdkDirectory)" />		
-	</Target>
+				]]></OverrideMe>
+    </PropertyGroup>
+    <!--<Exec Condition="'$(_JavaSdkDirectory)'='$(JAVA_HOME)" />-->
+    <!--<Exec ContinueOnError="true" Command="pwsh -NoLogo -NoProfile -NonInteractive -Command . {$(_JavaSdkDirectory) = $env:JAVA_HOME}" />-->
+    <Message Text="_JavaSdkDirectory IS NOW; $(_JavaSdkDirectory)" />
+  </Target>
 </Project>
